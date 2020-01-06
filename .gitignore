@@ -6,3 +6,7 @@
 
 *.bak
 *.sav
+*.mat
+*.DS_Store
+*.JPG
+*.mov
