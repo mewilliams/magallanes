@@ -11,12 +11,8 @@ fn = '../raw_data/ptar/ptar_rad_20190101_20200102.txt';
 
 % fid=fopen([datadir,sensorbasefile '.txt'],'r');
 fid=fopen(fn,'r');
-
-
 C = textscan(fid,'%f %4f-%2f-%2f %2f:%2f:%2f %s','headerlines',0,'whitespace',' \n\r\t');
-
 fclose(fid);
-
 slevel=C{1};
 sdate=datenum(C{2},C{3},C{4},C{5},C{6},C{7});
 
