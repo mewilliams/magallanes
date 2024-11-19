@@ -1,3 +1,6 @@
+% written 2 dec 2022 m williams
+% run/edited 19 nov 2024
+
 
 clear;
 close all
@@ -14,6 +17,17 @@ fn = '11304_1a_MorroNunez.000';
 
 sensors_plot(adcp,cfg,1)
 datetick2('x') % zooming datetick2.m function, can replace with datetick('x') 
+
+
+
+figure
+
+plot(adcp.mtime,adcp.pressure)
+% datetick2('x')
+datetick2('x','dd mmm yyyy')
+
+
+return;
 
 velocities_pcolor(adcp,cfg,10)
 datetick2('x')
