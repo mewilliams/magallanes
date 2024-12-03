@@ -22,9 +22,25 @@ datetick2('x') % zooming datetick2.m function, can replace with datetick('x')
 
 figure
 
-plot(adcp.mtime,adcp.pressure)
+plot(adcp.mtime,adcp.pressure/1000)
 % datetick2('x')
 datetick2('x','dd mmm yyyy')
+
+
+time_morronunez = adcp.mtime;
+pressure_morronunez = adcp.pressure/1000;
+clearvars -except time_morronunez pressure_morronunez
+readme_morronunez = ['pressure data from 11304_1a_MorroNunez.000 code: read_shoa_adcp_morronunez.m on '...
+    datestr(now,'dd mmm yyyy')];
+
+ix_good = 1055:6865;
+time_morronunez = time_morronunez(ix_good);
+pressure_morronunez = pressure_morronunez(ix_good);
+clear ix_good
+save('morronunez_pressure_shoa_adcp')
+
+
+
 
 
 return;
